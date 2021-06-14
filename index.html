@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="main">
+        <div class="todo">
+            <div class="todo_input_section">
+                <div class="todo_title_input">
+                    <input type="text" name="" id="todo_title" placeholder="To Do Title">
+                </div>
+                <div class="todo_description">
+                    <textarea name="" id="todo_description" cols="30" rows="3" placeholder="To Do Description"></textarea>
+                </div>
+            </div>
+            <div class="todo_content_section">
+                <div class="todo_card">
+                    <div class="card_title">
+                        <h5>To DO TITLe </h5>
+                    </div>
+                    <div class="card_description">
+                       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, ullam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="add">
+                <button onclick="addTodo()" class="btn">+</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        function addTodo(){
+            let todo_title = document.getElementById('todo_title').value;
+            let todo_description = document.getElementById('todo_description').value;
+            let data ={
+                 'title':todo_title,
+                'description':todo_description,
+                }
+               
+            localStorage.setItem("todo",JSON.stringify(data));
+        }
+    </script>
+</body>
+</html>
